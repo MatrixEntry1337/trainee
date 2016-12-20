@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Trainee Web Application</title>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Update Trainee</h4>
+        </div>
+        <div class="modal-body" id="trainee-update">
+          <!-- dynamic content from js here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="trainee-change" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="collapsed navbar-toggle"
+        data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Trainee App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li id="sortAB"><a href="#">AB</a></li>
+        <li id="sortMajor"><a href="#">Major</a></li>
+        <li id="sortJoined"><a href="#">Joined</a></li>
+        <li id="sortJoinedReverse"><a href="#">Joined-Reverse</a></li>
+      </ul>
+      <form class="navbar-form navbar-right"> <div class="form-group">
+        <input class="form-control" placeholder="Trainee Name"> </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Main -->
+<div class="wrapper">
+  <!-- nav -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Trainee</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-6">
+                <form id="traineeForm">
+                  <div class="form-group">
+                    <label for="traineeName">Trainee Name</label>
+                    <input type="text" class="form-control" id="traineeName"
+                    placeholder="Trainee Name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="traineeMajor">Trainee Major</label>
+                    <input type="text" class="form-control" id="traineeMajor"
+                    placeholder="Trainee Major" required>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row" id="trainee-list" >
+              <!-- inserted trainees go here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="trainee.js"></script>
+</body>
+</html>
